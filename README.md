@@ -21,22 +21,29 @@ The following **optional** features are implemented:
 * [x] Remembering the bill amount across app restarts (if <10mins)
 * [x] Using locale-specific currency and currency thousands separators.
 * [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Animations
+* [x] Added "Night mode" to alternative between dark and light backgrounds
+* [x] Updated UI & layout to be cleaner (less is more)
 
 The following **additional** features are implemented:
 * [x] Restore defaults button in Settings
+* [x] Added ability to edit tip percentages
+
 - [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/AJiqq3N.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/mH0zW0O.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+1) the segmented control wouldn't consistently update after changing through Settings; resorted to double calling an update in viewWillAppear and viewDidAppear
 
 ## License
 
