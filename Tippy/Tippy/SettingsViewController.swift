@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var textFieldTipA: UITextField!
     @IBOutlet weak var textFieldTipB: UITextField!
     @IBOutlet weak var textFieldTipC: UITextField!
+    @IBOutlet weak var switchNightLight: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +39,14 @@ class SettingsViewController: UIViewController {
     }
         
     @IBAction func didBeginEditingTipField(sender: AnyObject) {
-//        var textField: UITextField!
-//        
-//        if (sender.isKindOfClass(UITextField)) {
-//            textField = sender as! UITextField
-//        }
+
     }
 
     @IBAction func didEndEditingTipField(sender: AnyObject) {
         UserDefaults.saveDefaults((Double(textFieldTipA.text!) ?? 0)/100,
                      doubleTipB: (Double(textFieldTipB.text!) ?? 0)/100,
-                     doubleTipC: (Double(textFieldTipC.text!) ?? 0)/100)
+                     doubleTipC: (Double(textFieldTipC.text!) ?? 0)/100,
+                     boolNightLight: switchNightLight.on)
         
     }
     
@@ -66,6 +64,8 @@ class SettingsViewController: UIViewController {
             textFieldTipA.text = String(format:"%.0f", arraySavedTipPercentages[0]*100)
             textFieldTipB.text = String(format:"%.0f", arraySavedTipPercentages[1]*100)
             textFieldTipC.text = String(format:"%.0f", arraySavedTipPercentages[2]*100)
+            
+            switchNightLight.on = UserDefaults.isNightLightOn()
         }
     }
     

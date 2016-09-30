@@ -13,6 +13,7 @@ public class UserDefaults {
     static var keyUserDefaultsCreatedFlag = "DefaultsSaved"
     static var keyUserDefaultsBillAmount = "stringBillAmount"
     static var keyUserDefaultsBillAmountDate = "dateBillAmount"
+    static var keyUserDefaultsIsNightLightOn = "boolNightLight"
     // timer for bill amount cache in seconds
     static var billAmountCacheTime = 10 * 60
     
@@ -22,17 +23,18 @@ public class UserDefaults {
     }
     
     // save defaults
-    class func saveDefaults(doubleTipA:Double, doubleTipB:Double, doubleTipC:Double) {
+    class func saveDefaults(doubleTipA:Double, doubleTipB:Double, doubleTipC:Double, boolNightLight:Bool) {
         userDefaults().setDouble(doubleTipA, forKey: "doubleTipPercentangeA")
         userDefaults().setDouble(doubleTipB, forKey: "doubleTipPercentangeB")
         userDefaults().setDouble(doubleTipC, forKey: "doubleTipPercentangeC")
+        userDefaults().setBool(boolNightLight, forKey: keyUserDefaultsIsNightLightOn)
         userDefaults().setBool(true, forKey: keyUserDefaultsCreatedFlag)
         userDefaults().synchronize()
     }
     
     // initialize defaults and save
     class func initDefaults() {
-        saveDefaults(0.18, doubleTipB:0.2, doubleTipC:0.25)
+        saveDefaults(0.18, doubleTipB:0.2, doubleTipC:0.25, boolNightLight:false)
         userDefaults().setBool(true, forKey: keyUserDefaultsCreatedFlag)
         saveBillAmount("", dateTimestamp: NSDate())
         userDefaults().synchronize()
@@ -48,6 +50,11 @@ public class UserDefaults {
         return [userDefaults().doubleForKey("doubleTipPercentangeA"),
                 userDefaults().doubleForKey("doubleTipPercentangeB"),
                 userDefaults().doubleForKey("doubleTipPercentangeC")]
+    }
+    
+    // is night light mode on
+    class func isNightLightOn() -> Bool {
+        return userDefaults().boolForKey(keyUserDefaultsIsNightLightOn)
     }
     
     // save the last bill amount and time

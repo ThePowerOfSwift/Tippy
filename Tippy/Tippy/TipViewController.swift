@@ -15,6 +15,9 @@ class TipViewController: UIViewController {
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var billDisplayLabel: UILabel!
     @IBOutlet weak var tipPercentSegmentControl: UISegmentedControl!
+    @IBOutlet weak var tipTitleLabel: UILabel!
+    @IBOutlet weak var totalTitleLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,31 @@ class TipViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updateTipAmountSegmentControlTitles()
+        
+        // adjust background for night light mode
+        if (UserDefaults.isNightLightOn()) {
+            // night light is on
+            view.backgroundColor = UIColor.blackColor()
+            tipLabel.textColor = UIColor.whiteColor()
+            totalLabel.textColor = UIColor.whiteColor()
+            billDisplayLabel.textColor = UIColor.whiteColor()
+            tipTitleLabel.textColor = UIColor.whiteColor()
+            totalTitleLabel.textColor = UIColor.whiteColor()
+            tipPercentSegmentControl.tintColor = UIColor.whiteColor()
+        }
+        else {
+            // night light is off
+            view.backgroundColor = UIColor.whiteColor()
+            tipLabel.textColor = UIColor.blackColor()
+            totalLabel.textColor = UIColor.blackColor()
+            billDisplayLabel.textColor = UIColor.blackColor()
+            tipTitleLabel.textColor = UIColor.blackColor()
+            totalTitleLabel.textColor = UIColor.blackColor()
+            
+            tipPercentSegmentControl.tintColor = UIColor.blueColor()
+        }
+        
+        
         // pop out keyboard
         billTextField.becomeFirstResponder()
     }
@@ -99,6 +127,7 @@ class TipViewController: UIViewController {
         //update labels
         tipLabel.text = stringCurrencyStyleFromDouble(doubleTip)
         totalLabel.text = stringCurrencyStyleFromDouble(doubleTotal)
+        
         //animation
         UIView.animateWithDuration(0.5, animations: {
             self.tipLabel.alpha = 1
