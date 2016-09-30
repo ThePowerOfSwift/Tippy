@@ -69,8 +69,14 @@
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="yLJ-Yf-UP2"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vkn-0o-zln">
+                                <rect key="frame" x="149" y="80" width="151" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="aIu-Q3-gA1" appends="YES" id="isP-G2-qXO"/>
@@ -84,6 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="billDisplayLabel" destination="vkn-0o-zln" id="rs6-Lu-7WA"/>
                         <outlet property="billTextField" destination="yxa-Vh-BbJ" id="Pal-o8-BT8"/>
                         <outlet property="tipLabel" destination="FO5-Hz-WLV" id="uGp-wR-agf"/>
                         <outlet property="tipPercentSegmentControl" destination="I2n-Th-7MG" id="D42-bc-RMl"/>
@@ -168,7 +175,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="h7P-zn-Rtf"/>
+                    <navigationItem key="navigationItem" id="h7P-zn-Rtf">
+                        <barButtonItem key="rightBarButtonItem" title="Restore" id="gxJ-Ix-hZw">
+                            <connections>
+                                <action selector="restoreDefaults:" destination="tzy-UJ-86e" id="99Q-j7-fPN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textFieldTipA" destination="lwt-zo-c2i" id="4UV-FG-mOs"/>
                         <outlet property="textFieldTipB" destination="fDt-GD-zcw" id="ozd-Ys-Z2s"/>
@@ -195,7 +208,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcG-px-dDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="252"/>
+            <point key="canvasLocation" x="250" y="252"/>
         </scene>
     </scenes>
 </document>

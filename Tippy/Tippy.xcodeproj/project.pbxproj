@@ -16,6 +16,7 @@
 		786DCA1E1D9C6D2000AC7DB4 /* TippyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DCA1D1D9C6D2000AC7DB4 /* TippyUITests.swift */; };
 		786DCA2E1D9CAA2600AC7DB4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786DCA2D1D9CAA2600AC7DB4 /* UserDefaults.swift */; };
 		78DF9A931D9DA7A70042C54C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF9A921D9DA7A70042C54C /* SettingsViewController.swift */; };
+		78DF9A971D9DBBC10042C54C /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 78DF9A961D9DBBC10042C54C /* TODO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		786DCA1F1D9C6D2000AC7DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786DCA2D1D9CAA2600AC7DB4 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		78DF9A921D9DA7A70042C54C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		78DF9A961D9DBBC10042C54C /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,11 @@
 		786DC9FC1D9C6D2000AC7DB4 /* Tippy */ = {
 			isa = PBXGroup;
 			children = (
-				78DF9A921D9DA7A70042C54C /* SettingsViewController.swift */,
+				78DF9A961D9DBBC10042C54C /* TODO */,
 				786DC9FD1D9C6D2000AC7DB4 /* AppDelegate.swift */,
 				786DC9FF1D9C6D2000AC7DB4 /* TipViewController.swift */,
 				786DCA2D1D9CAA2600AC7DB4 /* UserDefaults.swift */,
+				78DF9A921D9DA7A70042C54C /* SettingsViewController.swift */,
 				786DCA011D9C6D2000AC7DB4 /* Main.storyboard */,
 				786DCA041D9C6D2000AC7DB4 /* Assets.xcassets */,
 				786DCA061D9C6D2000AC7DB4 /* LaunchScreen.storyboard */,
@@ -237,6 +240,7 @@
 			files = (
 				786DCA081D9C6D2000AC7DB4 /* LaunchScreen.storyboard in Resources */,
 				786DCA051D9C6D2000AC7DB4 /* Assets.xcassets in Resources */,
+				78DF9A971D9DBBC10042C54C /* TODO in Resources */,
 				786DCA031D9C6D2000AC7DB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

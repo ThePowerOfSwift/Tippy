@@ -16,7 +16,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -29,15 +28,14 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // update tip % segment controller
-        if UserDefaults.isDefaultsCreated() {
-            let arraySavedTipPercentages = UserDefaults.getTipPercentages()
-            
-            textFieldTipA.text = String(format:"%.0f", arraySavedTipPercentages[0]*100)
-            textFieldTipB.text = String(format:"%.0f", arraySavedTipPercentages[1]*100)
-            textFieldTipC.text = String(format:"%.0f", arraySavedTipPercentages[2]*100)
-            }
-            
-        }
+        loadTipFields()
+        // make keyboard appear
+        textFieldTipA.becomeFirstResponder()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
         
     @IBAction func didBeginEditingTipField(sender: AnyObject) {
 //        var textField: UITextField!
@@ -48,13 +46,30 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func didEndEditingTipField(sender: AnyObject) {
-        print("editing end")
         UserDefaults.saveDefaults((Double(textFieldTipA.text!) ?? 0)/100,
                      doubleTipB: (Double(textFieldTipB.text!) ?? 0)/100,
                      doubleTipC: (Double(textFieldTipC.text!) ?? 0)/100)
         
     }
     
+    //restore factory defaults (tip %'s)
+    @IBAction func restoreDefaults(sender: AnyObject) {
+        UserDefaults.initDefaults()
+        loadTipFields()
+    }
+    
+    // update tip % fields
+    func loadTipFields() {
+        if UserDefaults.isDefaultsCreated() {
+            let arraySavedTipPercentages = UserDefaults.getTipPercentages()
+            
+            textFieldTipA.text = String(format:"%.0f", arraySavedTipPercentages[0]*100)
+            textFieldTipB.text = String(format:"%.0f", arraySavedTipPercentages[1]*100)
+            textFieldTipC.text = String(format:"%.0f", arraySavedTipPercentages[2]*100)
+        }
+    }
+    
+
     /*
     // MARK: - Navigation
 
