@@ -7,7 +7,7 @@ Pre-work for CodePath: a simple tip calculator
 
 Submitted by: **Jonathan Cheng**
 
-Time spent: **5** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
